@@ -46,13 +46,18 @@ namespace WindowsFormsApp1
 
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.CommandType= CommandType.Text;
-            sqlCmd.CommandText = "select * from Employee where E_ID = '" + Id + "' and password = '" + pass +"'";
+            sqlCmd.CommandText = "select * from Employee where E_ID = '" + Id 
+                + "' and password = '" + pass +"'";
             sqlCmd.Connection = sqlCon;
 
             SqlDataReader rs = sqlCmd.ExecuteReader();
             if(rs.Read()){
                 String result =(String) rs.GetString(2);
                 MessageBox.Show("Hello " + result);
+                sqlCon.Close();
+                this.Hide();
+                Form2 form2 = new Form2();
+                form2.Show();
             }
                                  
         }
