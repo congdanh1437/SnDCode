@@ -143,6 +143,7 @@
             this.Controls.Add(this.lbCusName);
             this.Controls.Add(this.label1);
             this.Name = "BorrowListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "BorrowListForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

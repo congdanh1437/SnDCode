@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form2
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -47,7 +47,7 @@
             this.userToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1033, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1033, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,15 +61,6 @@
             this.bookToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.bookToolStripMenuItem.Text = "Book Manage";
             // 
-            // userToolStripMenuItem
-            // 
-            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createUserToolStripMenuItem,
-            this.deleteCustomerToolStripMenuItem});
-            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
-            this.userToolStripMenuItem.Text = "Customer Manage";
-            // 
             // borrowBookToolStripMenuItem
             // 
             this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
@@ -82,24 +73,37 @@
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
             this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.returnBookToolStripMenuItem.Text = "Return Book";
+            this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
             // 
             // importBookToolStripMenuItem
             // 
             this.importBookToolStripMenuItem.Name = "importBookToolStripMenuItem";
             this.importBookToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.importBookToolStripMenuItem.Text = "Import Book";
+            this.importBookToolStripMenuItem.Click += new System.EventHandler(this.importBookToolStripMenuItem_Click);
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createUserToolStripMenuItem,
+            this.deleteCustomerToolStripMenuItem});
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.userToolStripMenuItem.Text = "Customer Manage";
             // 
             // createUserToolStripMenuItem
             // 
             this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
             this.createUserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.createUserToolStripMenuItem.Text = "Create Customer";
+            this.createUserToolStripMenuItem.Click += new System.EventHandler(this.createUserToolStripMenuItem_Click);
             // 
             // deleteCustomerToolStripMenuItem
             // 
             this.deleteCustomerToolStripMenuItem.Name = "deleteCustomerToolStripMenuItem";
             this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.deleteCustomerToolStripMenuItem.Text = "Delete Customer";
+            this.deleteCustomerToolStripMenuItem.Click += new System.EventHandler(this.deleteCustomerToolStripMenuItem_Click);
             // 
             // Form2
             // 
