@@ -16,5 +16,10 @@ namespace WindowsFormsApp1.Customer
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
