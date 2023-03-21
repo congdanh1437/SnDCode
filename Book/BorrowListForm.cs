@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class BorrowListForm : Form
+    public partial class txtName : Form
     {
-        public BorrowListForm()
+        public txtName()
         {
             InitializeComponent();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

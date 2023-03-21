@@ -16,5 +16,60 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void ImportListForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Quantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddOldBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

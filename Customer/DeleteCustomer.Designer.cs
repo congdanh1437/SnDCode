@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID_Customer = new System.Windows.Forms.Label();
-            this.txtIdCustomer = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameCus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressCus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneCus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Customer = new System.Windows.Forms.Label();
+            this.txtIdCustomer = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +65,26 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(445, 150);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // NameCus
+            // 
+            this.NameCus.HeaderText = "Name";
+            this.NameCus.Name = "NameCus";
+            // 
+            // AddressCus
+            // 
+            this.AddressCus.HeaderText = "Address";
+            this.AddressCus.Name = "AddressCus";
+            // 
+            // PhoneCus
+            // 
+            this.PhoneCus.HeaderText = "Phone";
+            this.PhoneCus.Name = "PhoneCus";
             // 
             // ID_Customer
             // 
@@ -103,26 +123,6 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // NameCus
-            // 
-            this.NameCus.HeaderText = "Name";
-            this.NameCus.Name = "NameCus";
-            // 
-            // AddressCus
-            // 
-            this.AddressCus.HeaderText = "Address";
-            this.AddressCus.Name = "AddressCus";
-            // 
-            // PhoneCus
-            // 
-            this.PhoneCus.HeaderText = "Phone";
-            this.PhoneCus.Name = "PhoneCus";
-            // 
             // DeleteCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,9 +134,10 @@
             this.Controls.Add(this.ID_Customer);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DeleteCustomer";
             this.Text = "DeleteCustomer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

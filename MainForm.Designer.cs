@@ -65,21 +65,21 @@
             // borrowBookToolStripMenuItem
             // 
             this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
-            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.borrowBookToolStripMenuItem.Text = "Borrow Book";
             this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
             // 
             // returnBookToolStripMenuItem
             // 
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
-            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.returnBookToolStripMenuItem.Text = "Return Book";
             this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
             // 
             // importBookToolStripMenuItem
             // 
             this.importBookToolStripMenuItem.Name = "importBookToolStripMenuItem";
-            this.importBookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importBookToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.importBookToolStripMenuItem.Text = "Import Book";
             this.importBookToolStripMenuItem.Click += new System.EventHandler(this.importBookToolStripMenuItem_Click);
             // 
@@ -95,14 +95,14 @@
             // createUserToolStripMenuItem
             // 
             this.createUserToolStripMenuItem.Name = "createUserToolStripMenuItem";
-            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createUserToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.createUserToolStripMenuItem.Text = "Create Customer";
             this.createUserToolStripMenuItem.Click += new System.EventHandler(this.createUserToolStripMenuItem_Click);
             // 
             // deleteCustomerToolStripMenuItem
             // 
             this.deleteCustomerToolStripMenuItem.Name = "deleteCustomerToolStripMenuItem";
-            this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.deleteCustomerToolStripMenuItem.Text = "Delete Customer";
             this.deleteCustomerToolStripMenuItem.Click += new System.EventHandler(this.deleteCustomerToolStripMenuItem_Click);
             // 
@@ -114,9 +114,10 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Form2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
