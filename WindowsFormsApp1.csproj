@@ -91,24 +91,13 @@
     <Compile Include="Book\ImportListForm.Designer.cs">
       <DependentUpon>ImportListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Employee.cs">
-      <DependentUpon>ModelSnD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ModelSnD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelSnD.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ModelSnD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelSnD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ModelSnD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelSnD.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Borrow_List.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Import_List.cs" />
+    <Compile Include="Model\ModelSnD.cs" />
+    <Compile Include="Model\Suplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Book\ReturnForm.cs">
@@ -147,13 +136,6 @@
     <EmbeddedResource Include="Book\ReturnForm.resx">
       <DependentUpon>ReturnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\ModelSnD.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelSnD.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model\ModelSnD.edmx.diagram">
-      <DependentUpon>ModelSnD.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -171,17 +153,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\ModelSnD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelSnD.edmx</DependentUpon>
-      <LastGenOutput>ModelSnD.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\ModelSnD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelSnD.edmx</DependentUpon>
-      <LastGenOutput>ModelSnD.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
