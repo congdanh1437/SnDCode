@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace WindowsFormsApp1.Model
 {
-    public partial class ModelSnD : DbContext
+    public partial class ModelSnd : DbContext
     {
-        public ModelSnD()
-            : base("name=SnD")
+        public ModelSnd()
+            : base("name=ModelSnd")
         {
         }
 

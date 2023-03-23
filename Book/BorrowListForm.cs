@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Console.WriteLine(txtCusID.Text);
-            var db = new ModelSnD();
+            var db = new ModelSnd();
             var sb = db.Customers.Where(x => x.C_ID == txtCusID.Text).FirstOrDefault();
             if(txtCusName.Text.Length == 0 && sb != null)
             {
@@ -41,6 +41,30 @@ namespace WindowsFormsApp1
             }
             
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(txtIdBook.Text);
+            Console.WriteLine(txtQuantity.Text);
+            var db = new ModelSnd();
+            var sb = db.Books.Where(x => x.BookID == txtIdBook.Text).FirstOrDefault();
+            if (sb == null)
+            {
+                MessageBox.Show("Can not find");
+            }
+            else
+            {
+                int dex = 0;
+                dataGridView1.Rows[dex].Cells[0].Value = sb.BookID.ToString();
+                dataGridView1.Rows[dex].Cells[1].Value = sb.Book_Title.ToString();
+                dataGridView1.Rows[dex].Cells[2].Value = txtQuantity.Text;
+            }
         }
     }
 }

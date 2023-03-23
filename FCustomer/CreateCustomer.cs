@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1.Customer
 {
     public partial class CreateCustomer : Form
     {
+        ModelSnd dbcontext;
         public CreateCustomer()
         {
             InitializeComponent();

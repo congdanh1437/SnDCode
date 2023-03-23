@@ -9,15 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
     public partial class LoginForm : Form
     {
         
-        String strCon = @"Data Source=LAPTOP-M5AVS4UF;Initial Catalog=SnD;Persist Security Info=True;User ID=danh;Password=123";
-        SqlConnection sqlCon = null;
+        
+        ModelSnd dbcontext;
+        private Employee Find_e(string id, List<Employee> list_e)
+        {
+            foreach (Employee e in list_e)
+            {
+                if (id==e.E_ID)
+                {
+                    return e;
+                }
+            }
+            return null; 
+        }
         public LoginForm()
         {
             InitializeComponent();
@@ -30,6 +41,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             if(txtID == null 
                 || txtID.Text.Length == 0 
                 ) {
@@ -43,41 +55,30 @@ namespace WindowsFormsApp1
             }
             else
             {
-                String Id = txtID.Text;
-                String pass = txtPassword.Text;
+                dbcontext = new ModelSnd();
+                List<Employee> list_e = dbcontext.Employees.ToList();
+                
+                string id = txtID.Text;
+                string password = txtPassword.Text;
 
-                if (sqlCon == null)
+               Employee sel = Find_e(id, list_e);
+                if(sel == null)
                 {
-                    sqlCon = new SqlConnection(strCon);
-                }
-
-                if (sqlCon.State == ConnectionState.Closed)
-                {
-                    sqlCon.Open();
-                }
-
-                SqlCommand sqlCmd = new SqlCommand();
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "select * from Employee where E_ID = '" + Id
-                    + "' and password = '" + pass + "'";
-                sqlCmd.Connection = sqlCon;
-
-                SqlDataReader rs = sqlCmd.ExecuteReader();
-                if (rs.Read())
-                {
-                    String result = (String)rs.GetString(2);
-                    MessageBox.Show("Hello " + result);
-                    sqlCon.Close();
-                    this.Hide();
-                    MainForm form2 = new MainForm();
-                    form2.Show();
+                    MessageBox.Show("Cannot find id");
                 }
                 else
                 {
-                    sqlCon.Close();
-                    MessageBox.Show("ID Or Password Incorrect");
-
+                    if(password != sel.Password)
+                    {
+                        MessageBox.Show("Cannot find pass");
+                    }
+                    else
+                    {
+                        MainForm mainForm = new MainForm();
+                        mainForm.Show();
+                    }
                 }
+                
             }
             
                                  

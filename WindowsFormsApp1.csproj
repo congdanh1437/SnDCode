@@ -61,16 +61,16 @@
     <Compile Include="Book\BorrowListForm.Designer.cs">
       <DependentUpon>BorrowListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CreateCustomer.cs">
+    <Compile Include="FCustomer\CreateCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\CreateCustomer.Designer.cs">
+    <Compile Include="FCustomer\CreateCustomer.Designer.cs">
       <DependentUpon>CreateCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\DeleteCustomer.cs">
+    <Compile Include="FCustomer\DeleteCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\DeleteCustomer.Designer.cs">
+    <Compile Include="FCustomer\DeleteCustomer.Designer.cs">
       <DependentUpon>DeleteCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -96,7 +96,7 @@
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Import_List.cs" />
-    <Compile Include="Model\ModelSnD.cs" />
+    <Compile Include="Model\ModelSnd.cs" />
     <Compile Include="Model\Suplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,10 +109,10 @@
     <EmbeddedResource Include="Book\BorrowListForm.resx">
       <DependentUpon>BorrowListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CreateCustomer.resx">
+    <EmbeddedResource Include="FCustomer\CreateCustomer.resx">
       <DependentUpon>CreateCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\DeleteCustomer.resx">
+    <EmbeddedResource Include="FCustomer\DeleteCustomer.resx">
       <DependentUpon>DeleteCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
