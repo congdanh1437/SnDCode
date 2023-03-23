@@ -13,11 +13,19 @@ namespace WindowsFormsApp1
 {
     public partial class txtName : Form
     {
+        double totalprice = 0;
         public txtName()
         {
             InitializeComponent();
+            pushday();
         }
-
+        private void pushday()
+        {
+            DateTime calldate = DateTime.Now;
+            txtcallday.AppendText(calldate.ToString());
+            DateTime duedate = calldate.AddDays(30);
+            txtdueday.AppendText(duedate.ToString());
+        }
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -45,7 +53,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -54,17 +62,30 @@ namespace WindowsFormsApp1
             Console.WriteLine(txtQuantity.Text);
             var db = new ModelSnd();
             var sb = db.Books.Where(x => x.BookID == txtIdBook.Text).FirstOrDefault();
-            if (sb == null)
+            if (txtQuantity.TextLength == 0)
             {
-                MessageBox.Show("Can not find");
+                MessageBox.Show("Input Quantity!!!");    
             }
             else
             {
-                int dex = 0;
-                dataGridView1.Rows[dex].Cells[0].Value = sb.BookID.ToString();
-                dataGridView1.Rows[dex].Cells[1].Value = sb.Book_Title.ToString();
-                dataGridView1.Rows[dex].Cells[2].Value = txtQuantity.Text;
+                if (sb == null)
+                {
+                    MessageBox.Show("Can not find");
+                }
+                else
+                {
+                    int dex = 0;
+                    double price = 10000* double.Parse(txtQuantity.Text);
+                    dataGridView1.Rows[dex].Cells[0].Value = sb.BookID.ToString();
+                    dataGridView1.Rows[dex].Cells[1].Value = sb.Book_Title.ToString();
+                    dataGridView1.Rows[dex].Cells[2].Value = txtQuantity.Text;
+                    totalprice += price;
+                    txtPrice.AppendText(totalprice.ToString()); 
+                    txtPrice.AppendText("₫");
+
+                }
             }
+            
         }
     }
 }
