@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 
         private void borrowBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtName borrowListForm1 = new txtName();
+            BorrowListForm borrowListForm1 = new BorrowListForm();
             borrowListForm1.MdiParent = this;
             borrowListForm1.Show();
         }

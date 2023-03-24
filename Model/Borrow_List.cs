@@ -28,5 +28,7 @@ namespace WindowsFormsApp1.Model
         public DateTime? Return_Day { get; set; }
 
         public double? Fine { get; set; }
+
+        public int? Quality { get; set; }
     }
 }

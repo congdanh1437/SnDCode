@@ -92,6 +92,7 @@
       <DependentUpon>ImportListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Borrow.cs" />
     <Compile Include="Model\Borrow_List.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />

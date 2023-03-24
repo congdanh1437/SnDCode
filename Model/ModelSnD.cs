@@ -13,6 +13,7 @@ namespace WindowsFormsApp1.Model
         }
 
         public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Borrow> Borrows { get; set; }
         public virtual DbSet<Borrow_List> Borrow_List { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }

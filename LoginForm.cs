@@ -76,12 +76,17 @@ namespace WindowsFormsApp1
                     {
                         MainForm mainForm = new MainForm();
                         mainForm.Show();
+                        LoginForm login = new LoginForm();
+                        login.Dispose();
                     }
                 }
                 
-            }
-            
-                                 
+            }                                
         }
+
+        private void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }    
     }
 }
