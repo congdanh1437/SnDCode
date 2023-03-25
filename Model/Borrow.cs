@@ -18,5 +18,7 @@ namespace WindowsFormsApp1.Model
         [Column(Order = 1)]
         [StringLength(50)]
         public string B_ID { get; set; }
+
+        public int? Quantity { get; set; }
     }
 }

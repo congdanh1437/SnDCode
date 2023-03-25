@@ -63,6 +63,7 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtArlert = new System.Windows.Forms.TextBox();
+            this.btnchange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,6 +140,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(501, 278);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column1
             // 
@@ -276,7 +278,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(790, 109);
+            this.btnAdd.Location = new System.Drawing.Point(790, 85);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 21;
@@ -387,11 +389,23 @@
             this.txtArlert.Size = new System.Drawing.Size(260, 13);
             this.txtArlert.TabIndex = 33;
             // 
+            // btnchange
+            // 
+            this.btnchange.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnchange.Location = new System.Drawing.Point(790, 114);
+            this.btnchange.Name = "btnchange";
+            this.btnchange.Size = new System.Drawing.Size(75, 23);
+            this.btnchange.TabIndex = 34;
+            this.btnchange.Text = "change";
+            this.btnchange.UseVisualStyleBackColor = true;
+            this.btnchange.Click += new System.EventHandler(this.btnchange_Click);
+            // 
             // BorrowListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 585);
+            this.Controls.Add(this.btnchange);
             this.Controls.Add(this.txtArlert);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label13);
@@ -473,5 +487,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.TextBox txtArlert;
+        private System.Windows.Forms.Button btnchange;
     }
 }
