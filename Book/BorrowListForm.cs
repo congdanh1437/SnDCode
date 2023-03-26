@@ -98,21 +98,21 @@ namespace WindowsFormsApp1
             int totalquantity = 0;
 
             var sb = db.Customers.Where(x => x.C_ID == txtCusID.Text).FirstOrDefault();
-            db.Customers.Remove(sb);
+            
             sb.Lend_Status = 1;
-            db.SaveChanges();
-            db.Customers.Add(sb);
+            db.Customers.AddOrUpdate();
+           
 
             for (int i = 0; i < dataGridView1.RowCount-1; i++)
             {
                 string b = dataGridView1.Rows[i].Cells[0].Value.ToString();
                
                 var bl = db.Books.Where(x => x.BookID == b).FirstOrDefault();
-                db.Books.Remove(bl);
-                db.SaveChanges();
+                
+                
                 bl.Quantity -= Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
                 totalquantity += Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                db.Books.Add(bl);
+                db.Books.AddOrUpdate();
             }
 
             Borrow_List list = new Borrow_List();

@@ -11,6 +11,7 @@ namespace WindowsFormsApp1.Model
             : base("name=ModelSnd")
         {
         }
+        
 
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Borrow> Borrows { get; set; }

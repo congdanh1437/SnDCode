@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
                         MainForm mainForm = new MainForm();
                         mainForm.Show();
                         LoginForm login = new LoginForm();
-                        login.Dispose();
+                        this.Hide();
                     }
                 }
                 
