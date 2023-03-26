@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.Model
     public partial class ModelSnd : DbContext
     {
         public ModelSnd()
-            : base("name=ModelSnd1")
+            : base("name=ModelSnd")
         {
         }
 

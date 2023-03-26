@@ -64,6 +64,7 @@ namespace WindowsFormsApp1
                 txtAddress.AppendText(sb.Address);
                 txtLendStatus.AppendText(sb.Lend_Status.ToString());
                 bl++;
+                txtBorrowListID.AppendText("BL");
                 txtBorrowListID.AppendText(bl.ToString());
                 txtArlert.Text = "";
                 if (sb.Lend_Status==1)
@@ -181,6 +182,7 @@ namespace WindowsFormsApp1
 
         private void txtCusID_TextChanged(object sender, EventArgs e)
         {
+            txtArlert.Text = "";
             textchange(txtCusID.Text);
         }
 

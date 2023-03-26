@@ -52,6 +52,8 @@
             this.txtFined = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSaveReturnBook = new System.Windows.Forms.Button();
+            this.txtArlert = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,15 +80,16 @@
             // txtBorrowListID
             // 
             this.txtBorrowListID.Location = new System.Drawing.Point(399, 63);
-            this.txtBorrowListID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBorrowListID.Margin = new System.Windows.Forms.Padding(4);
             this.txtBorrowListID.Name = "txtBorrowListID";
             this.txtBorrowListID.Size = new System.Drawing.Size(251, 22);
             this.txtBorrowListID.TabIndex = 2;
+            this.txtBorrowListID.TextChanged += new System.EventHandler(this.txtBorrowListID_TextChanged);
             // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(716, 59);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 4;
@@ -108,7 +111,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(673, 318);
             this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -157,16 +159,18 @@
             // txtCusID
             // 
             this.txtCusID.Location = new System.Drawing.Point(117, 127);
-            this.txtCusID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusID.Name = "txtCusID";
+            this.txtCusID.ReadOnly = true;
             this.txtCusID.Size = new System.Drawing.Size(243, 22);
             this.txtCusID.TabIndex = 11;
             // 
             // txtCusName
             // 
             this.txtCusName.Location = new System.Drawing.Point(544, 130);
-            this.txtCusName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusName.Name = "txtCusName";
+            this.txtCusName.ReadOnly = true;
             this.txtCusName.Size = new System.Drawing.Size(179, 22);
             this.txtCusName.TabIndex = 13;
             // 
@@ -174,8 +178,9 @@
             // 
             this.txtDueDay.Enabled = false;
             this.txtDueDay.Location = new System.Drawing.Point(117, 219);
-            this.txtDueDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDueDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtDueDay.Name = "txtDueDay";
+            this.txtDueDay.ReadOnly = true;
             this.txtDueDay.Size = new System.Drawing.Size(243, 22);
             this.txtDueDay.TabIndex = 32;
             // 
@@ -183,8 +188,9 @@
             // 
             this.txtCallDay.Enabled = false;
             this.txtCallDay.Location = new System.Drawing.Point(117, 178);
-            this.txtCallDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCallDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtCallDay.Name = "txtCallDay";
+            this.txtCallDay.ReadOnly = true;
             this.txtCallDay.Size = new System.Drawing.Size(243, 22);
             this.txtCallDay.TabIndex = 31;
             // 
@@ -197,7 +203,6 @@
             this.label10.Size = new System.Drawing.Size(60, 16);
             this.label10.TabIndex = 30;
             this.label10.Text = "Due Day";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -208,7 +213,6 @@
             this.label9.Size = new System.Drawing.Size(58, 16);
             this.label9.TabIndex = 29;
             this.label9.Text = "Call Day";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label3
             // 
@@ -224,15 +228,16 @@
             // 
             this.txtReturnDay.Enabled = false;
             this.txtReturnDay.Location = new System.Drawing.Point(117, 263);
-            this.txtReturnDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReturnDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtReturnDay.Name = "txtReturnDay";
+            this.txtReturnDay.ReadOnly = true;
             this.txtReturnDay.Size = new System.Drawing.Size(243, 22);
             this.txtReturnDay.TabIndex = 34;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(399, 263);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 28);
             this.button1.TabIndex = 35;
@@ -243,8 +248,9 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(839, 247);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(243, 22);
             this.textBox1.TabIndex = 37;
             // 
@@ -262,8 +268,9 @@
             // 
             this.txtFined.Enabled = false;
             this.txtFined.Location = new System.Drawing.Point(117, 308);
-            this.txtFined.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFined.Margin = new System.Windows.Forms.Padding(4);
             this.txtFined.Name = "txtFined";
+            this.txtFined.ReadOnly = true;
             this.txtFined.Size = new System.Drawing.Size(243, 22);
             this.txtFined.TabIndex = 39;
             // 
@@ -280,19 +287,41 @@
             // btnSaveReturnBook
             // 
             this.btnSaveReturnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveReturnBook.Location = new System.Drawing.Point(812, 658);
-            this.btnSaveReturnBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveReturnBook.Location = new System.Drawing.Point(753, 659);
+            this.btnSaveReturnBook.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveReturnBook.Name = "btnSaveReturnBook";
             this.btnSaveReturnBook.Size = new System.Drawing.Size(173, 52);
             this.btnSaveReturnBook.TabIndex = 40;
             this.btnSaveReturnBook.Text = "Save";
             this.btnSaveReturnBook.UseVisualStyleBackColor = true;
+            this.btnSaveReturnBook.Click += new System.EventHandler(this.btnSaveReturnBook_Click);
+            // 
+            // txtArlert
+            // 
+            this.txtArlert.BackColor = System.Drawing.SystemColors.Control;
+            this.txtArlert.ForeColor = System.Drawing.Color.Red;
+            this.txtArlert.Location = new System.Drawing.Point(117, 347);
+            this.txtArlert.Name = "txtArlert";
+            this.txtArlert.Size = new System.Drawing.Size(243, 22);
+            this.txtArlert.TabIndex = 41;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(943, 659);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(111, 51);
+            this.btnReset.TabIndex = 42;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // ReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 725);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.txtArlert);
             this.Controls.Add(this.btnSaveReturnBook);
             this.Controls.Add(this.txtFined);
             this.Controls.Add(this.label7);
@@ -350,5 +379,7 @@
         private System.Windows.Forms.TextBox txtFined;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSaveReturnBook;
+        private System.Windows.Forms.TextBox txtArlert;
+        private System.Windows.Forms.Button btnReset;
     }
 }

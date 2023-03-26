@@ -28,11 +28,6 @@ namespace WindowsFormsApp1
             borrowListForm1.Show();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void importBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImportListForm importListForm = new ImportListForm();
@@ -59,11 +54,6 @@ namespace WindowsFormsApp1
             DeleteCustomer deleteCustomer = new DeleteCustomer();
             deleteCustomer.MdiParent = this;
             deleteCustomer.Show();
-        }
-
-        private void bookToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
