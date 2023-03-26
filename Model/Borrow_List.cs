@@ -8,6 +8,12 @@ namespace WindowsFormsApp1.Model
 
     public partial class Borrow_List
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Borrow_List()
+        {
+            Borrows = new HashSet<Borrow>();
+        }
+
         [Key]
         [StringLength(50)]
         public string Borrow_List_ID { get; set; }
@@ -30,5 +36,15 @@ namespace WindowsFormsApp1.Model
         public double? Fine { get; set; }
 
         public int? Quality { get; set; }
+
+        [StringLength(50)]
+        public string E_ID { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Borrow> Borrows { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+        public virtual Employee Employee { get; set; }
     }
 }

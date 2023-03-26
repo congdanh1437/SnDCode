@@ -9,6 +9,13 @@ namespace WindowsFormsApp1.Model
     [Table("Book")]
     public partial class Book
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Book()
+        {
+            Borrows = new HashSet<Borrow>();
+            Imports = new HashSet<Import>();
+        }
+
         [StringLength(50)]
         public string BookID { get; set; }
 
@@ -22,5 +29,11 @@ namespace WindowsFormsApp1.Model
         public double Price { get; set; }
 
         public int Quantity { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Borrow> Borrows { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Import> Imports { get; set; }
     }
 }

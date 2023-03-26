@@ -61,25 +61,26 @@
             this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
             this.bookToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.bookToolStripMenuItem.Text = "Book Manage";
+            this.bookToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
             // 
             // borrowBookToolStripMenuItem
             // 
             this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
-            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrowBookToolStripMenuItem.Text = "Borrow Book";
             this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
             // 
             // returnBookToolStripMenuItem
             // 
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
-            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.returnBookToolStripMenuItem.Text = "Return Book";
             this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.returnBookToolStripMenuItem_Click);
             // 
             // importBookToolStripMenuItem
             // 
             this.importBookToolStripMenuItem.Name = "importBookToolStripMenuItem";
-            this.importBookToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.importBookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importBookToolStripMenuItem.Text = "Import Book";
             this.importBookToolStripMenuItem.Click += new System.EventHandler(this.importBookToolStripMenuItem_Click);
             // 

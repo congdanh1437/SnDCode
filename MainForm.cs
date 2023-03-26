@@ -8,19 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Customer;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        Employee employee = new Employee();
+        public MainForm(Employee e)
         {
             InitializeComponent();
+            employee = e;
         }
 
         private void borrowBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BorrowListForm borrowListForm1 = new BorrowListForm();
+            BorrowListForm borrowListForm1 = new BorrowListForm(employee);
             borrowListForm1.MdiParent = this;
             borrowListForm1.Show();
         }
@@ -56,6 +59,11 @@ namespace WindowsFormsApp1
             DeleteCustomer deleteCustomer = new DeleteCustomer();
             deleteCustomer.MdiParent = this;
             deleteCustomer.Show();
+        }
+
+        private void bookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

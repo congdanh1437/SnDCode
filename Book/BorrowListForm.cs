@@ -17,7 +17,8 @@ namespace WindowsFormsApp1
         double totalprice = 0;
         int dex = 0;
         ModelSnd db = new ModelSnd();
-        public BorrowListForm()
+        Employee employee = new Employee();
+        public BorrowListForm(Employee e)
         {
             InitializeComponent();
             pushday();
@@ -25,7 +26,9 @@ namespace WindowsFormsApp1
             txtIdBook.Enabled = false;
             txtQuantity.Enabled = false;
             btnAdd.Enabled = false;
-            btnsave.Enabled = false;     
+            btnsave.Enabled = false;
+            txtEID.Text = e.E_ID;
+            employee = e;
         }
         private void pushday()
         {
@@ -98,32 +101,36 @@ namespace WindowsFormsApp1
             int totalquantity = 0;
 
             var sb = db.Customers.Where(x => x.C_ID == txtCusID.Text).FirstOrDefault();
-            
             sb.Lend_Status = 1;
-            db.Customers.AddOrUpdate();
-           
-
-            for (int i = 0; i < dataGridView1.RowCount-1; i++)
-            {
-                string b = dataGridView1.Rows[i].Cells[0].Value.ToString();
-               
-                var bl = db.Books.Where(x => x.BookID == b).FirstOrDefault();
-                
-                
-                bl.Quantity -= Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                totalquantity += Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                db.Books.AddOrUpdate();
-            }
+            //db.Customers.AddOrUpdate();
 
             Borrow_List list = new Borrow_List();
             list.Borrow_List_ID = txtBorrowListID.Text;
             list.C_ID = txtCusID.Text;
             list.Call_Day = DateTime.Now;
             list.Due_Date = list.Call_Day.AddDays(30);
+            Borrow b = new Borrow();
+            for (int i = 0; i < dataGridView1.RowCount-1; i++)
+            {
+                string bi = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                var bl = db.Books.Where(x => x.BookID == bi).FirstOrDefault();
+                bl.Quantity -= Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                totalquantity += Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                b.BL_ID = txtBorrowListID.Text;
+                b.B_ID = bi;
+                b.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                db.Borrows.Add(b);
+            }
+            list.Total_Price = float.Parse(txtPrice.Text);
             list.Quality = totalquantity;
+            list.E_ID = employee.E_ID;
             db.Borrow_List.Add(list);
-
             db.SaveChanges();
+
+
+
+
+
             MessageBox.Show("Save complete!");
         }
 
@@ -160,7 +167,7 @@ namespace WindowsFormsApp1
                         dataGridView1.Rows[dex].Cells[2].Value = txtQuantity.Text;
                         totalprice += price;
                         txtPrice.Text = totalprice.ToString();
-                        txtPrice.AppendText("₫");
+                        
                         dex++;
                     }
                 }

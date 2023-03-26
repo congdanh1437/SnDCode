@@ -6,23 +6,23 @@ namespace WindowsFormsApp1.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Borrow")]
-    public partial class Borrow
+    [Table("Import")]
+    public partial class Import
     {
         [Key]
         [Column(Order = 0)]
         [StringLength(50)]
-        public string BL_ID { get; set; }
+        public string B_ID { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [StringLength(50)]
-        public string B_ID { get; set; }
+        public string IL_ID { get; set; }
 
-        public int? Quantity { get; set; }
+        public int Quantity { get; set; }
 
         public virtual Book Book { get; set; }
 
-        public virtual Borrow_List Borrow_List { get; set; }
+        public virtual Import_List Import_List { get; set; }
     }
 }

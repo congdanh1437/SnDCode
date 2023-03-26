@@ -9,6 +9,14 @@ namespace WindowsFormsApp1.Model
     [Table("Employee")]
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            Borrow_List = new HashSet<Borrow_List>();
+            Customers = new HashSet<Customer>();
+            Import_List = new HashSet<Import_List>();
+        }
+
         [Key]
         [StringLength(50)]
         public string E_ID { get; set; }
@@ -27,5 +35,14 @@ namespace WindowsFormsApp1.Model
 
         [Column(TypeName = "date")]
         public DateTime? DOB { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Borrow_List> Borrow_List { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Customer> Customers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Import_List> Import_List { get; set; }
     }
 }
