@@ -43,6 +43,26 @@ namespace WindowsFormsApp1.FCustomer
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            var getBorrowListID = db.Borrow_List.Where(x => x.C_ID == txtIdCustomer.Text).Select(x => x.Borrow_List_ID).ToArray();
+            if(getBorrowListID != null)
+            {
+                foreach(var item in getBorrowListID)
+                {
+                    var delBorrow = db.Borrows.Where(x => x.BL_ID == item).FirstOrDefault();
+                    db.Borrows.Remove(delBorrow);
+                    db.SaveChanges();
+                }
+
+                foreach(var item in getBorrowListID)
+                {
+                    var delBorrowList = db.Borrow_List.Where(x => x.Borrow_List_ID == item).FirstOrDefault();
+                    db.Borrow_List.Remove(delBorrowList);
+                    db.SaveChanges();
+                }
+                
+            }
+
+            
             var delcus = db.Customers.Where(x => x.C_ID == txtIdCustomer.Text).FirstOrDefault();
             db.Customers.Remove(delcus);
             db.SaveChanges();

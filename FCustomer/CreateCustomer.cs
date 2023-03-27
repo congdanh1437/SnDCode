@@ -25,7 +25,7 @@ namespace WindowsFormsApp1.FCustomer
         {
            
             int hi = dateTimePicker1.Value.CompareTo(DateTime.Now);
-            if (txtName.Text != null && txtPhone.Text != null && txtAddress.Text != null && txtMail.Text != null && hi == 1) 
+            if (txtName.Text != null && txtPhone.Text != null && txtAddress.Text != null && txtMail.Text != null && hi < 1) 
             {
                 var sb = db.Customers;
                 Customer c = new Customer();
