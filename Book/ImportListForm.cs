@@ -78,6 +78,7 @@ namespace WindowsFormsApp1
 
         private void btnAddOldBook_Click(object sender, EventArgs e)
         {
+            
             if(txtBookID.TextLength != 0 )
             {
                 if(txtPrice.TextLength != 0 )
@@ -91,6 +92,7 @@ namespace WindowsFormsApp1
                             dataGridView1.Rows[dex].Cells[1].Value = txtTitle.Text;
                             dataGridView1.Rows[dex].Cells[2].Value = txtPrice.Text;
                             dataGridView1.Rows[dex].Cells[3].Value = txtQuantity.Text;
+                            dex++;
                         }
                         else
                         {
