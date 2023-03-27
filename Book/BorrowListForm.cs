@@ -109,10 +109,10 @@ namespace WindowsFormsApp1
             list.Borrow_List_ID = txtBorrowListID.Text;
             list.C_ID = txtCusID.Text;
             list.Call_Day = DateTime.Now;
-            list.Due_Date = list.Call_Day.AddDays(30);
-            Borrow b = new Borrow();
+            list.Due_Date = list.Call_Day.AddDays(30);            
             for (int i = 0; i < dataGridView1.RowCount-1; i++)
             {
+                Borrow b = new Borrow();
                 string bi = dataGridView1.Rows[i].Cells[0].Value.ToString();
                 var bl = db.Books.Where(x => x.BookID == bi).FirstOrDefault();
                 bl.Quantity -= Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
