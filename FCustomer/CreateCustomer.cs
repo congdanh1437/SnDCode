@@ -45,7 +45,7 @@ namespace WindowsFormsApp1.FCustomer
                 sb.Add(c);
                 db.SaveChanges();
 
-                MessageBox.Show("Create complete!");
+                MessageBox.Show("Create complete! Your Customer ID: " + c.C_ID);
             }
             else
             {

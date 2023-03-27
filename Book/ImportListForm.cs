@@ -168,9 +168,24 @@ namespace WindowsFormsApp1
             {
                 string bi = dataGridView1.Rows[i].Cells[0].Value.ToString();
                 var bl = dbcontext.Books.Where(x => x.BookID == bi).FirstOrDefault();
-                bl.Quantity += Int32.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                if(bl != null)
+                {
+                    bl.Quantity += Int32.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                }
+                else
+                {
+                    var nBook = dbcontext.Books;
+                    var newBook = new Book();
+                    newBook.BookID = dataGridView1.Rows[i].Cells[0].Value.ToString(); 
+                    newBook.Book_Title = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    newBook.Price =Int32.Parse( dataGridView1.Rows[i].Cells[2].Value.ToString());
+                    newBook.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                    nBook.Add(newBook);
+                    dbcontext.SaveChanges();
+                }
                 
-                dbcontext.SaveChanges();
+                
+                
             }
             for (int i = 0; i < dataGridView1.RowCount - 1; i++)
             {
