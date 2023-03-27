@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Customer
+namespace WindowsFormsApp1.FCustomer
 {
     public partial class DeleteCustomer : Form
     {
         public DeleteCustomer()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

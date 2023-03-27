@@ -9,64 +9,48 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
 
-namespace WindowsFormsApp1.Customer
+namespace WindowsFormsApp1.FCustomer
 {
     public partial class CreateCustomer : Form
     {
-        ModelSnd dbcontext;
-        public CreateCustomer()
+        ModelSnd db = new ModelSnd();
+        Employee employee = new Employee();
+        public CreateCustomer(Employee e)
         {
             InitializeComponent();
-        }
-
-        private void CreateCustomer_Load(object sender, EventArgs e)
-        {
-
-        }
-
+            txtEID.Text = e.E_ID;
+            employee = e;
+        }     
         private void button1_Click(object sender, EventArgs e)
         {
+           
+            int hi = dateTimePicker1.Value.CompareTo(DateTime.Now);
+            if (txtName.Text != null && txtPhone.Text != null && txtAddress.Text != null && txtMail.Text != null && hi == 1) 
+            {
+                var sb = db.Customers;
+                Customer c = new Customer();
+                var id = sb.Count() + 1;
+                c.C_ID = "C" + id.ToString();
+                c.C_Name = txtName.Text;
+                c.Email = txtMail.Text;
+                c.Phone_numb= txtPhone.Text;
+                c.Address= txtAddress.Text;
+                c.Date_Create = DateTime.Now;
+                c.DoB = dateTimePicker1.Value;
+                c.Lend_Status = 0;
+                c.E_ID = employee.E_ID;
+                var age = DateTime.Now.Year - dateTimePicker1.Value.Year;
+                c.Age = age;
 
-        }
+                sb.Add(c);
+                db.SaveChanges();
 
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtC_ID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+                MessageBox.Show("Create complete!");
+            }
+            else
+            {
+                MessageBox.Show("NOT NULL !");
+            }
         }
     }
 }

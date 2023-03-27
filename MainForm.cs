@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Customer;
+using WindowsFormsApp1.FCustomer;
 using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
 
         private void createUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateCustomer createCustomer = new CreateCustomer();
+            CreateCustomer createCustomer = new CreateCustomer(employee);
             createCustomer.MdiParent = this;
             createCustomer.Show();
         }
