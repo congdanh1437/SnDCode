@@ -133,9 +133,16 @@ namespace WindowsFormsApp1
 
                 var bl = db.Borrow_List.Where(x => x.Borrow_List_ID == txtBorrowListID.Text).FirstOrDefault();
                 bl.Return_Day = DateTime.Parse(txtReturnDay.Text);
-                bl.Fine = float.Parse(txtFined.Text);
-                db.Borrow_List.AddOrUpdate();
+                if(DateTime.Parse(txtReturnDay.Text) > DateTime.Parse(txtDueDay.Text))
+                {
+                    bl.Fine = float.Parse(txtFined.Text);
 
+                }
+                else
+                {
+                    bl.Fine = null;
+                }
+                db.Borrow_List.AddOrUpdate();
                 var b = db.Borrows.Where(x => x.BL_ID == txtBorrowListID.Text).Select(x => x.B_ID).ToArray();
                 
                 if (b != null)
@@ -158,6 +165,11 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("ERROR");
             }
+        }
+
+        private void ReturnForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
