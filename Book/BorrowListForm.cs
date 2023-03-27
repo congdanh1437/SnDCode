@@ -132,7 +132,7 @@ namespace WindowsFormsApp1
 
 
 
-            MessageBox.Show("Save complete!");
+            MessageBox.Show("Save complete! Your Borrow List ID :" + txtBorrowListID.Text);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -43,32 +43,42 @@ namespace WindowsFormsApp1.FCustomer
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            var getCus = db.Customers.Where(x => x.C_ID == txtIdCustomer.Text).FirstOrDefault();
             var getBorrowListID = db.Borrow_List.Where(x => x.C_ID == txtIdCustomer.Text).Select(x => x.Borrow_List_ID).ToArray();
-            if(getBorrowListID != null)
+            if(getCus != null)
             {
-                foreach(var item in getBorrowListID)
+                if (Int32.Parse(dataGridView1.Rows[0].Cells[7].Value.ToString()) == 0)
                 {
-                    var delBorrow = db.Borrows.Where(x => x.BL_ID == item).FirstOrDefault();
-                    db.Borrows.Remove(delBorrow);
-                    db.SaveChanges();
-                }
+                    foreach (var item in getBorrowListID)
+                    {
+                        var delBorrow = db.Borrows.Where(x => x.BL_ID == item).FirstOrDefault();
+                        db.Borrows.Remove(delBorrow);
+                        db.SaveChanges();
+                    }
 
-                foreach(var item in getBorrowListID)
-                {
-                    var delBorrowList = db.Borrow_List.Where(x => x.Borrow_List_ID == item).FirstOrDefault();
-                    db.Borrow_List.Remove(delBorrowList);
+                    foreach (var item in getBorrowListID)
+                    {
+                        var delBorrowList = db.Borrow_List.Where(x => x.Borrow_List_ID == item).FirstOrDefault();
+                        db.Borrow_List.Remove(delBorrowList);
+                        db.SaveChanges();
+                    }
+
+                    var delcus = db.Customers.Where(x => x.C_ID == txtIdCustomer.Text).FirstOrDefault();
+                    db.Customers.Remove(delcus);
                     db.SaveChanges();
+                    txtIdCustomer = null;
+                    dataGridView1.Rows.Clear();
+                    MessageBox.Show("Delete complete");
                 }
-                
+                else
+                {
+                    MessageBox.Show("The customer has not return the book");
+                }
             }
-
-            
-            var delcus = db.Customers.Where(x => x.C_ID == txtIdCustomer.Text).FirstOrDefault();
-            db.Customers.Remove(delcus);
-            db.SaveChanges();
-            txtIdCustomer = null;
-            dataGridView1.Rows.Clear();
-            MessageBox.Show("Delete complete");
+            else
+            {
+                MessageBox.Show("The customer does not exist");
+            }
         }
     }
 }
